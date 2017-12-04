@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<h1 class="row">Background image</h1>
+		<p class="row">The original image is available <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></p>
+
+		<h3 class="row">Img</h3>
+
+		<div class="row aspectRatioPlaceholder">
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute" data-width="5816" data-height="3272">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im1_mini.jpg" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im1.jpg" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+	</section>
+	<section class="container">
+
+		<h3 class="row">Backgound size</h3>
+
+		<div class="row sample-background progressive-bg-image v-center-content">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2_mini2.jpg"> 
+	        <img class="full-bg-image hidden" src="img/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white">
+	        	<h1>What a lovely background!</h1>
+	        </div>
+		</div>
+
+		<div class="row">
+			<h3>Background position</h3>
+			<p>The images used as minatures in this section are "not-so-bad" resolution to enhence the fact that they are aligned with the background image.</p>
+			<p><strong>Note</strong> that the position of the background depends on the size of your window at the time of loading. Since the blured canvas is drawed only at that time, if you change the size of the window, the canvas and the background image will not stay aligned. This should not be a problem in a real application since the blured canvas should only be showed once during the loading time.</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-left-top v-center-content mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2.jpg"> 
+		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+
+		        <div class="v-center relative">
+		        	<h3 class="white">left top</h3>
+		        </div>
+		    </div>
+		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-center-bottom v-center-content  mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2.jpg"> 
+		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		        <div class="v-center relative">
+		        	<h3 class="white">center bottom</h3>
+		        </div>
+		    </div>
+		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-right-center v-center-content mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2.jpg"> 
+		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		        <div class="v-center relative">
+		        	<h3 class="white">right center</h3>
+		        </div>
+		    </div>
+		</div>
+
+		<div class="row">
+			<h4>Miniature quality</h4>
+			<p>On <a href="size_comparison.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
+			<p>It seems that 25px for the bigest dimension (width or height) is the smallest size that produces a neat result.</p>
+		</div>
+
+
+	</section>
+	<section class="container">
+		<h3 class="row">Load as you scroll</h3>
+		<p class="row">You can manage to start the download of the full size images only when they appear in the window</p>
+		<div class="row sample-background progressive-bg-image scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2_mini2.jpg"> 
+	        <img class="full-bg-image hidden" src="img/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		</div>
+
+		<p class="row">A more ellaborate example <a href="">here</a></p><!-- TODO-->
+
+	</section>
+
+	<section class="container">
+		<h3 class="row">Other tests</h3>
+		<p class="row"><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded form a different file or embeded in the html in a base64 format. The comparison is <a href="b64.html">here </a></p>
+		<p class="row"><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="scroll_loading.html">here</a></p>
+	</section>
+	<footer style="min-height: 100px;"></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="js/pil.js"></script>
+
+    <script type="text/javascript">
+    	$('.mouse-activated').each(function(){
+    	
+	    	$(this)[0].onmouseenter = function() {
+	        	$(this).find(".progressive-img-load-canvas").css({opacity: 0});
+	        }
+	        $(this)[0].onmouseleave = function() {
+	        	$(this).find(".progressive-img-load-canvas").css({opacity: 1});
+	        }
+        });
+        PIL.fullImageLoaded = function(object) {
+        	if (object.root_el.classList.contains("mouse-activated")) {
+        		$(object.canvas).css({opacity: 1});
+        	}
+        }
+    </script>
+    <script type="text/javascript">
+
+
+    	$(function(){
+    		PIL.loadImages($(".progressive-bg-image:not(.scroll-loaded), .progressiveMedia:not(.scroll-loaded)").toArray());
+
+    		$(".progressive-bg-image.scroll-loaded, .progressiveMedia.scroll-loaded").each(function() {
+    			$(this).data('progressivelyLoadedObject', PIL.loadImage($(this)[0], false));
+    		});
+
+    		
+    		$(window).on('scroll resize', function() {
+    			scrollLoadedElements = $(".progressive-bg-image.scroll-loaded, .progressiveMedia.scroll-loaded");
+    			var window_height = $(window).height();
+				var window_top_position = $(window).scrollTop();
+				var window_bottom_position = (window_top_position + window_height);
+
+    			scrollLoadedElements.each(function() {
+				    var element_height = $(this).outerHeight();
+				    var element_top_position = $(this).offset().top;
+				    var element_bottom_position = (element_top_position + element_height);
+				    if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+				    	$(this).data('progressivelyLoadedObject').downloadFullImage();
+				    	$(this).removeClass("scroll-loaded");
+				    }
+    			})
+    		});
+    		
+    		//onScrollLoadedElements = $(".scroll-loaded");
+    		$(window).trigger('scroll');
+    	});
+    	
+
+    </script>
+
+</body>
+</html>

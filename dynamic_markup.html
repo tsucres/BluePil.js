@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<small><a href="index.html"> << Back to the demo</a></small>
+		<h3 class="row">Dynamically building the markup</h3>
+		<p class="row">Here's a test to compare the "markup builder" with the "manual markup".</p>
+		<div class="row sample-background progressive-bg-image v-center-content" data-full-image-path="img/im1.jpg" data-miniature-path="img/im1_mini.jpg">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im1.jpg"></noscript>
+	        <!--<img class="hidden thumbnail" src="img/im1_mini.jpg"> 
+	        <img class="full-bg-image hidden" src="img/im1.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>-->
+
+	        <div class="v-center relative">
+		        <h3 class="white">Manual markup</h3>
+		    </div>
+		</div>
+
+<div class="row sample-background progressive-bg-image v-center-content" data-full-image-path="img/im2.jpg" data-miniature-path="img/im2_mini2.jpg">
+			<!-- Progressive load of bg img -->
+	        <!--<noscript><img class="full-absolute" src="img/im2.jpg"></noscript>-->
+	        
+
+	        <div class="v-center relative">
+		        <h3 class="white">Dynamic markup</h3>
+		    </div>
+		</div>
+	</section>
+	<footer style="min-height: 100px;"></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="js/pil.js"></script>
+
+</body>
+</html>
