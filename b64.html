@@ -4,41 +4,53 @@
 	<title>b64 vs. seperate file</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/pil.css">
+    <link rel="stylesheet" href="css/demo.css">
 </head>
-<body>
-	
-	<section class="progressive-bg-image v-center-content">
-        <!-- Progressive load of bg img -->
-        <noscript><img class="full-absolute" src="img/im1.jpg"></noscript>
-        <img class="hidden thumbnail" src="img/im1_s30.jpg"> <!-- TODO: b64 -->
-        <img class="full-bg-image hidden" src="img/im1.jpg">
-        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
-        <!-- ===== -->
+<body class="container">
 
-        <div class="v-center">
-        	<h1>Separate file</h1>
-        </div>
-
-
-        
+	<section class="row padding-top">
+        <small><a href="index.html"> << Back to the demo</a></small>
+        <h3>File vs. B64</h3>
+        <p>This is a test to to see if there's any performance difference when including the miniature image in base64 format in the html instead of loading it from a separate file.</p> 
+        <p>It might depend on how the images are served, but according to the timeline (in the dev tools) the two manners seem equivalent.</p>  
     </section>
-    <section class="progressive-bg-image v-center-content">
+    <section class="row progressive-bg-image v-center-content sample-background">
+            <!-- Progressive load of bg img -->
+            <noscript><img class="full-absolute" src="img/im1.jpg"></noscript>
+            <img class="hidden thumbnail" src="img/im1_s30.jpg"> 
+            <img class="full-bg-image hidden" data-src="img/im1.jpg">
+            <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+            <!--================-->
+            <div class="v-center white relative">
+                <h1>Separate file</h1>
+            </div>
+        </div>
+    </section>
+    <section class="row progressive-bg-image v-center-content sample-background">
         <!-- Progressive load of bg img -->
         <noscript><img class="full-absolute" src="img/im1.jpg"></noscript>
         <img class="hidden thumbnail" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAHqADAAQAAAABAAAAEQAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgAEQAeAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBQQEBAQEBQYFBQUFBQUGBgYGBgYGBgcHBwcHBwgICAgICQkJCQkJCQkJCf/bAEMBAQICAgICBAICBAoHBQcKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCv/dAAQAAv/aAAwDAQACEQMRAD8A/ng+Angf4d678Mf7e0/QGujAhYTFsR7lxlAe7AEHHXGPWv0k/ZR8Hx6To82seNtPbT7TUi8FvdwhJWiI6eZHJkDBIAYA84yDX5ufsA/FfwfbeBvGPwc8dyyJoN/Ba6nA68rFeQSBVYZPDNE8ifLyw7HHH7Q/B7Wvgf4M8Ra5qXhrVYdbGlQiGG3N9Ck9kl2AwdzISpdQAoVVkYFVd1DYx+a53xHiKMnRwOBnWxcYyUKVPTndovmcrWUUpJNy21au1Y/mbhirgct48oV+IuWeBTTqqrHmhyNu6s1L3rJNcqvdrbW33r8KPAGo/Dm7jXxHNBbrezyCCR0wGgXmOVh1ViMKQDjOeBxX5tftJQeHPFfjW/mlmhtRZXRtxInyiTgtkse/t7V9OfEP4oaJd/AbTNJ8Wak0Fro0SxaTYQXRjQWqAhW85FjaZ1C4ZmOfmGK/E34lftBeAfCWiSaakra5PquoG7Nv57F4IrcPDEz3LhixfcxEa5AGCTnivTfEGaZNgsNRxmGl9Zk3KcN7Rado8yvHTTZvXtc+u4oy7grMc8xOP4PxFqFS84QjScIwTk7xu3dNWdouC91xtpa//9D+Oj4P/wDIx3H/AF8wf+jJK941D/kLeJv+vxf5V4P8H/8AkY7j/r5g/wDRkle8ah/yFvE3/X4v8q+Kpf8AI4X/AG7+h/KHEH+/S9F/6Uj9Iv2kP+Tf/BH/AGCj/wCgivw6vfvt9f6mv3F/aQ/5N/8ABH/YKP8A6CK/Dq9++31/qa/VeIP+RxT/AMK/9JHwx/Cfqz//2Q=="> <!-- TODO: b64 -->
-        <img class="full-bg-image hidden" src="img/im1.jpg">
+        <img class="full-bg-image hidden" data-src="img/im1.jpg">
         <canvas class="full-absolute progressive-img-load-canvas"></canvas>
         <!-- ===== -->
 
-        <div class="v-center">
+        <div class="v-center white relative">
         	<h1>Base64</h1>
         </div>
 
         
     </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <p><small>Original image: <a href="https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg">here</a></small><p>
+    
     
     <script type="text/javascript" src="js/pil.js"></script>
+    <script type="text/javascript">
+        ;(function() {
+            PIL.initAllImages();
+            PIL.loadAllImages();
+        })();
+        
+    </script>
 </body>
 </html>

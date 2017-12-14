@@ -1,0 +1,21 @@
+{
+  "name": "bluepil",
+  "version": "1.0.0",
+  "description": "BluePil.js is a javascript library to progressively load images (img and background-image). ",
+  "main": "bluepil.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PIL",
+    "progressively",
+    "load",
+    "image",
+    "background-image"
+  ],
+  "author": "Stéphane Sercu",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

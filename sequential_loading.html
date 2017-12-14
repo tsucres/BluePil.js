@@ -11,8 +11,9 @@
 	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
 	<section class="container">
 		<small><a href="index.html"> << Back to the demo</a></small>
-		<h1 class="row"></h1>
-		
+		<h1 class="row">Sequentially loading the images</h1>
+		<p class="row"> The following images are loaded in an attempt to load the visible images more rapidly.</p>
+		<p class="row">Open the timeline in the web-inspector to properly observe the result. You also might want to clear your caches to see the </p>
 
 		<h3 class="row">This is not a background!</h3>
 		<p><small>Original image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
@@ -34,7 +35,7 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im2/im2.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
 	        <div class="v-center white">
@@ -66,7 +67,7 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im5/im5_25x15.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im5/im5.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
 	        <div class="v-center white">
@@ -99,7 +100,7 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im2/im2.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
 	        <div class="v-center white">
@@ -132,7 +133,7 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im7/im7.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im7/im7_25x20.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im7/im7.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im7/im7.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
 	        <div class="v-center white">
@@ -145,14 +146,14 @@
 	</section>
 
 	<footer style="min-height: 100px;"></footer>
+	
     <script type="text/javascript" src="js/pil.js"></script>
 
     <script type="text/javascript">
 
 
     PIL.initAllImages();
-	PIL.initScrollLoadedImages();
-	PIL.loadAllNonScrollLoadedImages();
+	PIL.loadImagesSequentially();
     	
 
     </script>

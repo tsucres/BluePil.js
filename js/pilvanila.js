@@ -1,3 +1,0 @@
-document.onload = function() {
-	// body...
-}

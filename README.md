@@ -1,5 +1,5 @@
 
-PIL is a javascript library to progressively load images that works both for `img` tags **and** background-images.
+PIL is a javascript library to progressively load images that works both for `img` tags **and** `background-images`.
 
 \>>>>>>>> DEMO <<<<<<<<
 
@@ -11,22 +11,38 @@ There a 2 basic use cases:
 1. background image
 2. `img` tag
 
+## Instal
+
+According to the features you need, choose your distributtion file.
+
+At the end of your body:,
+
+```html
+<script src="js/pil.min.js"></script>
+```
+
+
+Also, add t-a link to the css in the head: 
+
+```html
+
+```
+
+
+
 ## Background image
 
-In this case, the aim is to progressively load the background image of a block element: 
+To make the background image of an element load progressively, you just have to add the class `.progressive-bg-image` and specify the path to the background image and to the miniature.
 
-```
-<div class="bg-image">
-<h1>Hi there</h1>
+It's also a good idea to add a `<noscript>` tag: 
+
+
+```html
+<div class="progressive-bg-image" data-full-image-path="img/background.jpg" data-mini-image-path="img/background_mini.jpg">
+	<noscript><img class="full-absolute object-fit-cover" src="img/background.jpg"></noscript>
+	
 </div>
 ```
-
-```css
-.bg-image {
-	background-image
-}
-```
-
 
 This will automatically work with any `background-position`.
 
@@ -36,14 +52,29 @@ However, currently, only the `background-size: cover` is supported.
 
 ## img tag
 
-Here, we want to turn 
+To make an `img` tag load progressively, you have to set 4 attributes: 
+
+- `data-full-image-path`
+- `data-miniature-path`
+- `data-full-image-width`
+- `data-full-image-height`
+
 
 ```html
 
-<img src="im.jpg">
+<img >
 ```
 
 
+## In either cases
+
+```html
+
+<script type="text/javascript">
+PIL.loadAllImages()
+</script>
+
+```
 ## Callbacks
 
 The `fullImageLoaded` method is called when the image is finally loaded with an object with the following attributes as parameter: 
@@ -81,7 +112,22 @@ PIL.fullImageLoaded = function(pilObject) {
 
 
 
+## Custom dist
+
+I don't know about you but I'm tired of all the existing libraries that . So I built different version: 
+
+- bgOnly
+- ImgOnly
+- Both
+- bgOnly+scroll
+- ImgOnly+scroll
+- Both+scroll
+
+
+# Build
+
+
 
 # TODO
 
-Make a vanila js version: currenty the swcript requires bootstrap & jQuery to work. 
+# LICENCE

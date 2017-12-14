@@ -4,7 +4,8 @@
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/pil.css">
+	<link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
 	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
@@ -32,10 +33,10 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im2_mini2.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im2.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
-	        <div class="v-center white">
+	        <div class="v-center white relative">
 	        	<h1>What a lovely background!</h1>
 	        </div>
 		</div>
@@ -50,7 +51,7 @@
 				<!-- Progressive load of bg img -->
 		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
 		        <img class="hidden thumbnail" src="img/im2.jpg"> 
-		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <img class="full-bg-image hidden" data-src="img/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 
 		        <div class="v-center relative">
@@ -61,7 +62,7 @@
 				<!-- Progressive load of bg img -->
 		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
 		        <img class="hidden thumbnail" src="img/im2.jpg"> 
-		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <img class="full-bg-image hidden" data-src="img/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		        <div class="v-center relative">
 		        	<h3 class="white">center bottom</h3>
@@ -71,7 +72,7 @@
 				<!-- Progressive load of bg img -->
 		        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
 		        <img class="hidden thumbnail" src="img/im2.jpg"> 
-		        <img class="full-bg-image hidden" src="img/im2.jpg">
+		        <img class="full-bg-image hidden" data-src="img/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		        <div class="v-center relative">
 		        	<h3 class="white">right center</h3>
@@ -81,7 +82,7 @@
 
 		<div class="row">
 			<h4>Miniature quality</h4>
-			<p>On <a href="size_comparison.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
+			<p>On <a href="size_comparison_auto.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
 			<p>It seems that 25px for the bigest dimension (width or height) is the smallest size that produces a neat result.</p>
 		</div>
 
@@ -94,74 +95,58 @@
 			<!-- Progressive load of bg img -->
 	        <noscript><img class="full-absolute" src="img/im2.jpg"></noscript>
 	        <img class="hidden thumbnail" src="img/im2_mini2.jpg"> 
-	        <img class="full-bg-image hidden" src="img/im2.jpg">
+	        <img class="full-bg-image hidden" data-src="img/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		</div>
 
-		<p class="row">A more ellaborate example <a href="">here</a></p><!-- TODO-->
+		<p class="row">A more ellaborate example <a href="scroll_loading.html">here</a></p><!-- TODO-->
 
 	</section>
 
 	<section class="container">
 		<h3 class="row">Other tests</h3>
-		<p class="row"><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded form a different file or embeded in the html in a base64 format. The comparison is <a href="b64.html">here </a></p>
-		<p class="row"><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="scroll_loading.html">here</a></p>
+		<p class="row"><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded form a different file or embeded in the html in a base64 format. The comparison is <a href="b64.html">here</a>.</p>
+		<p class="row"><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="dynamic_markup.html">here</a>.</p>
+		<p class="row"><strong>Sequential loading</strong>: a demonstration of how to load the images sequentially, i.e. start downloading the full-size images one at a time, starting with the first image in the DOM. It's available <a href="dynamic_markup.html">here</a>.</p>
 	</section>
 	<footer style="min-height: 100px;"></footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
         
     <script type="text/javascript" src="js/pil.js"></script>
 
     <script type="text/javascript">
-    	$('.mouse-activated').each(function(){
-    	
-	    	$(this)[0].onmouseenter = function() {
-	        	$(this).find(".progressive-img-load-canvas").css({opacity: 0});
-	        }
-	        $(this)[0].onmouseleave = function() {
-	        	$(this).find(".progressive-img-load-canvas").css({opacity: 1});
-	        }
-        });
-        PIL.fullImageLoaded = function(object) {
-        	if (object.root_el.classList.contains("mouse-activated")) {
-        		$(object.canvas).css({opacity: 1});
-        	}
-        }
-    </script>
-    <script type="text/javascript">
-
-
-    	$(function(){
-    		PIL.loadImages($(".progressive-bg-image:not(.scroll-loaded), .progressiveMedia:not(.scroll-loaded)").toArray());
-
-    		$(".progressive-bg-image.scroll-loaded, .progressiveMedia.scroll-loaded").each(function() {
-    			$(this).data('progressivelyLoadedObject', PIL.loadImage($(this)[0], false));
-    		});
-
+    	;(function() {
     		
-    		$(window).on('scroll resize', function() {
-    			scrollLoadedElements = $(".progressive-bg-image.scroll-loaded, .progressiveMedia.scroll-loaded");
-    			var window_height = $(window).height();
-				var window_top_position = $(window).scrollTop();
-				var window_bottom_position = (window_top_position + window_height);
+    		mouseActivatedEls = document.getElementsByClassName('mouse-activated');
 
-    			scrollLoadedElements.each(function() {
-				    var element_height = $(this).outerHeight();
-				    var element_top_position = $(this).offset().top;
-				    var element_bottom_position = (element_top_position + element_height);
-				    if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
-				    	$(this).data('progressivelyLoadedObject').downloadFullImage();
-				    	$(this).removeClass("scroll-loaded");
-				    }
-    			})
-    		});
+    		for (var i = 0; i < mouseActivatedEls.length; i++) {
+    			mouseActivatedEls[i].onmouseenter = function(evt) {
+		        	var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+
+		        	if (canvas) {
+		        		canvas.style.opacity = 0;
+		        	}
+		        }
+		        mouseActivatedEls[i].onmouseleave = function(evt) {
+		        	var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+		        	if (canvas) {
+		        		canvas.style.opacity = 1;
+		        	}
+		        }
+    		}
     		
-    		//onScrollLoadedElements = $(".scroll-loaded");
-    		$(window).trigger('scroll');
-    	});
+	        PIL.fullImageLoaded = function(object) {
+	        	if (object.root_el.classList.contains("mouse-activated")) {
+	        		object.canvas.style.opacity = 1;
+	        	}
+	        }
+	        
+	        PIL.initAllImages();
+			PIL.initScrollLoadedImages();
+			PIL.loadAllNonScrollLoadedImages();
+    	})();
     	
-
     </script>
-
+    
 </body>
 </html>

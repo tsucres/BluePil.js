@@ -7,7 +7,7 @@ OUTPUT_FILE = "size_comparison_auto.html"
 content = {
     "sections": [{
         "name": "Img 1: ", 
-        "description": '<small>source of the image: <a href="http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg" target="blank">http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg</a></small>',
+        "description": '<small class="col-xs-12">source of the image: <a href="http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg" target="blank">http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg</a></small>',
         "images": [
             {"full": "img/im3/im3.jpg", "mini": "img/im3/im3_10x6.jpg", "title": "10x6"},
             {"full": "img/im3/im3.jpg", "mini": "img/im3/im3_15x9.jpg", "title": "15x9"},
@@ -20,7 +20,7 @@ content = {
         ]}, 
         {
         "name": "Img 2: jpg", 
-        "description": '<small>source of the image: <a href="https://i.redd.it/1ufjma0bet101.png" target="blank">https://i.redd.it/1ufjma0bet101.png</a></small>',
+        "description": '<small class="col-xs-12">source of the image: <a href="https://i.redd.it/1ufjma0bet101.png" target="blank">https://i.redd.it/1ufjma0bet101.png</a></small>',
         "images": [
             {"full": "img/im4/im4.png", "mini": "img/im4/im4_10x11.png", "title": "10x11"},
             {"full": "img/im4/im4.png", "mini": "img/im4/im4_15x16.png", "title": "15x16"},
@@ -33,7 +33,7 @@ content = {
         ]},
         {
         "name": "Img 3", 
-        "description": '<small>source of the image: <a href="https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg" target="blank">https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg</a></small>',
+        "description": '<small class="col-xs-12">source of the image: <a href="https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg" target="blank">https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg</a></small>',
         "images": [
             {"full": "img/im5/im5.jpg", "mini": "img/im5/im5_10x6.jpg", "title": "10x6"},
             {"full": "img/im5/im5.jpg", "mini": "img/im5/im5_15x9.jpg", "title": "15x9"},
@@ -46,7 +46,7 @@ content = {
         ]},
         {
         "name": "Img 4", 
-        "description": '<small>source of the image: <a href="" target="blank"></a></small>',
+        "description": '<small class="col-xs-12">source of the image: <a href="" target="blank"></a></small>',
         "images": [
             {"full": "img/im1/im1.jpg", "mini": "img/im1/im1_10x6.jpg", "title": "10x6"},
             {"full": "img/im1/im1.jpg", "mini": "img/im1/im1_15x9.jpg", "title": "15x9"},
@@ -59,7 +59,7 @@ content = {
         ]},
         {
         "name": "Img 5", 
-        "description": '<small>source of the image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg" target="blank">https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg</a></small>',
+        "description": '<small class="col-xs-12">source of the image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg" target="blank">https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg</a></small>',
         "images": [
             {"full": "img/im2/im2.jpg", "mini": "img/im2/im2_10x7.jpg", "title": "10x7"},
             {"full": "img/im2/im2.jpg", "mini": "img/im2/im2_15x11.jpg", "title": "15x11"},
@@ -80,7 +80,8 @@ generated_html = """
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pil.css">
+    <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
     <noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
@@ -112,7 +113,7 @@ for section in content["sections"]:
             <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
                 <noscript><img class="full-absolute" src=\"""" + image["full"] + """\"></noscript>
                 <img class="hidden thumbnail" src=\"""" + image["mini"] + """\">
-                <img class="full-bg-image hidden" src=\"""" + image["full"] + """\">
+                <img class="full-bg-image hidden" data-src=\"""" + image["full"] + """\">
                 <canvas class="full-absolute progressive-img-load-canvas"></canvas>
                 <div class="v-center relative">
                     <h3 class="white">""" + image["title"] + """</h3>
@@ -127,20 +128,40 @@ for section in content["sections"]:
 
 
 generated_html += """
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        
+
     <script type="text/javascript" src="js/pil.js"></script>
 
     <script type="text/javascript">
-        $('.mouse-activated').each(function(){
-        
-            $(this)[0].onmouseenter = function() {
-                $(this).find(".progressive-img-load-canvas").css({opacity: 0});
+        ;(function() {
+            
+            mouseActivatedEls = document.getElementsByClassName('mouse-activated');
+
+            for (var i = 0; i < mouseActivatedEls.length; i++) {
+                mouseActivatedEls[i].onmouseenter = function(evt) {
+                    var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+
+                    if (canvas) {
+                        canvas.style.opacity = 0;
+                    }
+                }
+                mouseActivatedEls[i].onmouseleave = function(evt) {
+                    var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+                    if (canvas) {
+                        canvas.style.opacity = 1;
+                    }
+                }
             }
-            $(this)[0].onmouseleave = function() {
-                $(this).find(".progressive-img-load-canvas").css({opacity: 1});
+            
+            PIL.fullImageLoaded = function(object) {
+                if (object.root_el.classList.contains("mouse-activated")) {
+                    object.canvas.style.opacity = 1;
+                }
             }
-        });
+            
+            PIL.initAllImages();
+            PIL.initScrollLoadedImages();
+            PIL.loadAllNonScrollLoadedImages();
+        })();
     </script>
 </body>
 </html>
