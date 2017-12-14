@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BluePil.js - Background-image only</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="../dist/css/bluepil.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<small><a href="index.html"> << Back to the demo</a></small>
+		<h3 class="row">Img only</h3>
+		<p>
+			Just tests the bg-only version of bluepil. If the background-image bellow is progressively loading and there's no error in the js console, then it's good sign...
+		</p>
+		<div class="sample-background progressive-bg-image v-center-content">
+			<noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		</div>
+		<p><small>Original image: <a target="blank" href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+	</section>
+	
+	<script type="text/javascript" src="../dist/js/bluepil-bg.min.js"></script>
+	<script type="text/javascript">
+		PIL.go();
+    </script>
+</body>
+
+</html>
