@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.org/tsucres/bluepil.svg?branch=master)](https://travis-ci.org/tsucres/bluepil)
 
-PIL is a javascript library to progressively load images that works both for `img` tags **and** `background-images`.
+BluePil.js is a javascript library to progressively load images that works both for `img` tags **and** `background-images`.
 
 \>>>>>>>> DEMO <<<<<<<<
 
 (**Warning for mobile users**: the demo contains large images, think about it if you're on mobile data :) )
+
 
 # Usage
 
@@ -110,6 +112,51 @@ PIL.fullImageLoaded = function(pilObject) {
 
 ```
 
+## Doc
+
+**Note**: the following methods are included in the full version. The img-only and bg-only versions contain only the methods concerning respectively the `.progressiveMedia` and `.progressive-bg-image` elements.
+
+
+
+**PIL.initAllImages()**: generates the markup (if needed) of all the `.progressiveMedia` and `.progressive-bg-image` elements found in the document and draws their blured miniatures.
+
+**PIL.loadAllImages()**: starts downloading the full-size image for all the `.progressiveMedia` and `.progressive-bg-image` elements found in the document and shows them instead of their miniatures.
+
+**PIL.go()**: calls `initAllImages()` and then `loadAllImages()` (waits for the document to be ready before starting).
+
+
+
+**PIL.loadAllNonScrollLoadedImages()**: Loads all the images (both background and non background images) found in the document that aren't marked with the class scroll-loaded. (Assumes that all those elements have been initialized beforehand).
+
+**PIL.initScrollLoadedImages()**: Assures that the elements marked with the class `scroll-loaded` (or with the data- attribute `data-scroll-loaded`) are loaded as the user scrolls.
+
+**PIL.loadImagesSequentially()**: Loads all the images (both `.progressiveMedia` and `.progressive-bg-image`) found in the document, one by one, starting from the top of the DOM. (i.e. each image will start loading when the previous one finished loading).
+
+
+
+**PIL.initImage(root_el)**: generates the markup (if needed) of the specified `.progressiveMedia` element and draws the blured miniature.
+
+**PIL.initBgImage(root_el)**: same as `initImage` but for `.progressive-bg-image` elements.
+ 
+**PIL.initImages(root_els)**: calls `PIL.initImage` for all the the `.progressiveMedia` elements the specified list.
+
+**PIL.initBgImages(root_els)**: same as `initImages` but for `.progressive-bg-image` elements.
+
+
+**PIL.loadImage(root_el[, callback])**: starts downloading the full-size image for the specified `.progressiveMedia` element and shows it instead of the miniature. The callback is called when the image finished loading with a boolean indicating the success of the operation.
+
+**PIL.loadBgImage(root_el[, callback])**: same as `loadImage` but for `.progressive-bg-image` elements.
+
+**PIL.loadImages(root_els)**: calls `PIL.loadImage` for all the the `.progressiveMedia` elements in the specified list.
+
+**PIL.loadBgImages(root_els)**: same as `loadImages` but for `.progressive-bg-image` elements.
+
+
+
+**PIL.fullImageLoaded(el)**: serves as a callback called when a full-size image (bg or img) is successfully loaded. The `el` parameter is an object with 2 attributes: 
+- `canvas`: the canvas that used to display the miniature
+- `root_el`: the `.progressiveMedia` or `.progressive-bg-image` element that has been loaded.
+
 
 
 ## Custom dist
@@ -126,8 +173,15 @@ I don't know about you but I'm tired of all the existing libraries that . So I b
 
 # Build
 
-
+1. Clone the repo
+2. Install gulp and its plugins: `npm install`
+3. run gulp: 
+	- `gulp` for the complete version
+	- `gulp bgOnly` for the background-image only version
+	- `gulp imgOnly` for the img only version
 
 # TODO
 
 # LICENCE
+
+BluePil is under MIT Licence. (check the [LICENCE](LICENCE) file).

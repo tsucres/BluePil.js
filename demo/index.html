@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="../dist/css/bluepil.min.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<h1 class="row">BluePil.js demonstration</h1>
+		
+		<h3 class="row">Img</h3>
+		
+		<div class="row aspectRatioPlaceholder">
+			<noscript><img src="img/im1/im1.jpg" class="full-bg-image"></noscript>
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute" data-width="5816" data-height="3272">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im1/im1_25x15.jpg" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im1/im1.jpg" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+		<p><small>Original image: <a target="blank" href="https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg">here</a></small><p>
+	</section>
+	<section class="container">
+
+		<h3 class="row">Background size</h3>
+
+		<div class="sample-background progressive-bg-image v-center-content">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white relative">
+	        	<h1>What a lovely background!</h1>
+	        </div>
+		</div>
+		<p><small>Original image: <a target="blank" href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+
+		<div class="row">
+			<h3>Background position</h3>
+			<p>The images used as miniatures in this section are "not-so-bad" resolution to enhance the fact that they are aligned with the background image.</p>
+			<p><strong>Note</strong> that the position of the background depends on the size of your window at the time of loading. Since the blurred canvas is drawn only at that time, if you change the size of the window, the canvas and the background image will not stay aligned. This should not be a problem in a real application since the blurred canvas should only be showed once during the loading time.</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-left-top v-center-content mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+
+		        <div class="v-center relative">
+		        	<h3 class="white">left top</h3>
+		        </div>
+		    </div>
+		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-center-bottom v-center-content  mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		        <div class="v-center relative">
+		        	<h3 class="white">center bottom</h3>
+		        </div>
+		    </div>
+		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-right-center v-center-content mouse-activated">
+				<!-- Progressive load of bg img -->
+		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		        <div class="v-center relative">
+		        	<h3 class="white">right center</h3>
+		        </div>
+		    </div>
+		</div>
+
+		<div class="row">
+			<h4>Miniature quality</h4>
+			<p>On <a href="size_comparison_auto.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
+			<p>It seems that 25px for the biggest dimension (width or height) is the smallest size that produces a neat result.</p>
+		</div>
+
+
+	</section>
+	<section class="container">
+		<h3 class="row">Load as you scroll</h3>
+		<p class="row">You can manage to start the download of the full size images only when they appear in the window</p>
+		<div class="sample-background progressive-bg-image scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+		</div>
+
+		<p class="row">A more ellaborate example <a href="scroll_loading.html">here</a></p><!-- TODO-->
+
+	</section>
+
+	<section class="container">
+		<h3 class="row">Other tests</h3>
+		<p><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded from a different file or embedded in the html in a base64 format. The comparison is <a href="b64.html">here</a>.</p>
+		<p><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="dynamic_markup.html">here</a>.</p>
+		<p><strong>Sequential loading</strong>: a demonstration of how to load the images sequentially, i.e. start downloading the full-size images one at a time, starting with the first image in the DOM. It's available <a href="sequential_loading.html">here</a>.</p>
+		<p><strong>Custom builds</strong>: to reduce the footprint of the library and avoid unnecessary code, bluepil can be built to manage only background-images or html images (but not both). Those builds are respectively used <a href="test_bgimage_only.html">here</a> and <a href="test_image_only.html">here</a>.</p>
+	</section>
+	<footer style="min-height: 100px;" class="container">
+		<br><br><p class="row">
+		<strong>Note</strong>: all the images in this page should also load with javascript disabled (not progressively though.. obviously).
+	</p>
+	</footer>
+
+        
+    <script type="text/javascript" src="../dist/js/bluepil.min.js"></script>
+
+    <script type="text/javascript">
+    	;(function() {
+    		
+    		mouseActivatedEls = document.getElementsByClassName('mouse-activated');
+
+    		for (var i = 0; i < mouseActivatedEls.length; i++) {
+    			mouseActivatedEls[i].onmouseenter = function(evt) {
+		        	var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+
+		        	if (canvas) {
+		        		canvas.style.opacity = 0;
+		        	}
+		        }
+		        mouseActivatedEls[i].onmouseleave = function(evt) {
+		        	var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+		        	if (canvas) {
+		        		canvas.style.opacity = 1;
+		        	}
+		        }
+    		}
+    		
+	        PIL.fullImageLoaded = function(object) {
+	        	if (object.root_el.classList.contains("mouse-activated")) {
+	        		object.canvas.style.opacity = 1;
+	        	}
+	        }
+	        
+	        PIL.initAllImages();
+			PIL.initScrollLoadedImages();
+			PIL.loadAllNonScrollLoadedImages();
+    	})();
+    	
+    </script>
+    
+</body>
+</html>

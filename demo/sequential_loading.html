@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="../dist/css/bluepil.min.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<small><a href="index.html"> << Back to the demo</a></small>
+		<h1 class="row">Sequentially loading the images</h1>
+		<p class="row"> The following images are loaded sequentially in an attempt to load the visible images faster.</p>
+		<p class="row">Open the timeline in the web-inspector to properly observe the result. You also might want to clear your caches to clearly see the result.</p>
+
+		<h3 class="row">This is not a background!</h3>
+		<p><small>Original image: <a href="https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg">here</a></small><p>
+		<div class="row aspectRatioPlaceholder">
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute scroll-loaded" data-width="5816" data-height="3272">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im1/im1_25x15.jpg" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im1/im1.jpg" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+	</section>
+	<section class="container">
+
+		<h3 class="row"></h3>
+		<p><small>Original image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+		<div class="sample-background progressive-bg-image v-center-content scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white">
+	        	<h1>This is a background!</h1>
+	        </div>
+		</div>
+		
+	</section>
+	<section class="container">
+		<h1 class="row"></h1>
+		
+
+		<h3 class="row">This is not a background!</h3>
+		<p><small>Original image: <a href="http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg">here</a></small><p>
+		<div class="row aspectRatioPlaceholder">
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute scroll-loaded" data-width="1920" data-height="1080">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im3/im3_25x15.jpg" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im3/im3.jpg" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+	</section>
+	<section class="container">
+
+		<h3 class="row"></h3>
+
+		<div class="sample-background progressive-bg-image v-center-content scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im5/im5_25x15.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white">
+	        	<h1>This is a background!</h1>
+	        </div>
+		</div>
+	</section>
+	<section class="container">
+		<h1 class="row">Load the images as you scroll</h1>
+		<p class="row">This page demonstrates how to make the images load as the user scrolls. Just scroll down, you'll see.</p>
+		
+
+		<h3 class="row">This is not a background!</h3>
+		<p><small>Original image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+		<div class="row aspectRatioPlaceholder">
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute scroll-loaded" data-width="1380" data-height="1421">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im4/im4_25x26.png" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im4/im4.png" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+	</section>
+	<section class="container">
+
+		<h3 class="row"></h3>
+
+		<div class="sample-background progressive-bg-image v-center-content scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white">
+	        	<h1>This is a background!</h1>
+	        </div>
+		</div>
+	</section>
+	<section class="container">
+		<h1 class="row"></h1>
+		
+
+		<h3 class="row">This is not a background!</h3>
+		
+		<div class="row aspectRatioPlaceholder">
+			<div class="aspectRatioPlaceholder-fill"></div>
+			  <div class="progressiveMedia full-absolute scroll-loaded" data-width="750" data-height="748">
+			    <img class="progressiveMedia-thumbnail hidden" src="img/im6/im6_25x25.jpg" alt="" />
+			    
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im6/im6.jpg" alt="" />
+			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+  			</div>
+		</div>
+		<p><small>Original image: <a href="https://i.redd.it/d9tnox3a0x101.jpg">https://i.redd.it/d9tnox3a0x101.jpg</a></small><p>
+	</section>
+	<section class="container">
+
+		<h3 class="row"></h3>
+		
+		<div class="sample-background progressive-bg-image v-center-content scroll-loaded">
+			<!-- Progressive load of bg img -->
+	        <noscript><img class="full-absolute" src="img/im7/im7.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im7/im7_25x20.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im7/im7.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+	        <!--================-->
+	        <div class="v-center white">
+	        	<h1>This is a background!</h1>
+	        </div>
+		</div>
+		<p><small>Original image: <a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/Atomium_de_Bruxelles.jpg
+">https://upload.wikimedia.org/wikipedia/commons/7/7d/Atomium_de_Bruxelles.jpg
+</a></small><p>
+	</section>
+
+	<footer style="min-height: 100px;"></footer>
+	
+    <script type="text/javascript" src="../dist/js/bluepil.min.js"></script>
+
+    <script type="text/javascript">
+
+    	;(function() {
+		    PIL.initAllImages();
+			PIL.loadImagesSequentially();
+    	})();
+
+    </script>
+
+</body>
+</html>

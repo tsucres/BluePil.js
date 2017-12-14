@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="../dist/css/bluepil.min.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+	<section class="container">
+		<small><a href="index.html"> << Back to the demo</a></small>
+		<h3 class="row">Dynamically building the markup</h3>
+		<p class="row">Here's a test to compare the "markup builder" with the "manual markup".</p>
+		<div class="row sample-background progressive-bg-image v-center-content">
+			<noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+	        <img class="hidden thumbnail" src="img/im1/im1_25x15.jpg"> 
+	        <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+
+	        <div class="v-center relative">
+		        <h3 class="white">Manual markup</h3>
+		    </div>
+		</div>
+
+		<div class="row sample-background progressive-bg-image v-center-content" data-full-image-path="img/im2/im2.jpg" data-miniature-path="img/im2/im2_25x17.jpg">
+			<noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+	        <div class="v-center relative">
+		        <h3 class="white">Dynamic markup</h3>
+		    </div>
+		</div>
+		<p><small>Original images: <a target="blank" href="https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg">here</a></small><p> and <a target="blank" href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+	</section>
+
+	<section class="container">
+		<h3 class="row">Same for img tags</h3>
+		<div class="row">
+			<div class="col-xs-6 col-md-offset-0 col-xs-offset-3">
+				<h5>Manual markup</h5>
+				<div class="row aspectRatioPlaceholder">
+					<div class="aspectRatioPlaceholder-fill"></div>
+					  <div class="progressiveMedia full-absolute" data-width="750" data-height="748">
+					    <img class="progressiveMedia-thumbnail hidden" src="img/im6/im6_25x25.jpg" alt="" />
+					    
+					    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im6/im6.jpg" alt="" />
+					    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
+		  			</div>
+				</div>
+				<p><small>Original image: <a href="https://i.redd.it/d9tnox3a0x101.jpg">here</a></small><p>
+			</div>
+			<div class="col-xs-6 col-md-offset-0 col-xs-offset-3">
+				<h5>Auto markup</h5>
+					<img class="progressive-image" data-full-image-path="img/im4/im4.png" data-miniature-path="img/im4/im4_25x26.png" data-full-image-height="1421" data-full-image-width="1380">
+				<p><small>Original image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg">here</a></small><p>
+			</div>
+		</div>
+		
+
+		
+	      
+	</section>
+	<footer style="min-height: 100px;"></footer>
+
+        
+    <script type="text/javascript" src="../dist/js/bluepil.min.js"></script>
+    <script type="text/javascript">
+    	PIL.go();
+    </script>
+</body>
+</html>
