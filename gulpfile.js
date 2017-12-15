@@ -8,6 +8,30 @@ var autoprefixer = require('gulp-autoprefixer');
 var preprocess = require('gulp-preprocess');
 var uglify = require('gulp-uglify');
 
+// fetch command line arguments
+const arg = (argList => {
+
+  let arg = {}, opt, thisOpt, curOpt;
+  for (var a = 0; a < argList.length; a++) {
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt) arg[curOpt] = opt;
+      curOpt = null;
+    }
+    else {
+      // argument name
+      curOpt = opt;
+      arg[curOpt] = true;
+    }
+  }
+
+  return arg;
+
+})(process.argv);
+
+
 function processJS(filenames, ctx, output_name) {
 	return gulp.src(filenames)
     .pipe(preprocess({context: ctx}))
@@ -17,19 +41,32 @@ function processJS(filenames, ctx, output_name) {
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'));
 }
+function buildContextFromArgs() {
+	var ctx = {};
+	if (arg.hasOwnProperty("no-seq")) {
+		ctx["NO_SEQ"] = true;
+	}
+	if (arg.hasOwnProperty("no-scroll")) {
+		ctx["NO_SCROLL_LOADED"] = true;
+	}
+	return ctx;
+}
 gulp.task('all', function() {
+	var ctx = { BP_IMG: true, BP_BG_IMG: true};
 	return processJS(['./src/js/core.js', './src/js/bgimages.js', './src/js/images.js'], 
-		{ BP_IMG: true, BP_BG_IMG: true}, 
+		Object.assign(ctx, buildContextFromArgs()), 
 		'bluepil.js');
 });
 gulp.task('bgOnly', function() {
+	var ctx = { BP_BG_IMG: true};
 	return processJS(['./src/js/core.js', './src/js/bgimages.js'], 
-		{ BP_BG_IMG: true}, 
+		Object.assign(ctx, buildContextFromArgs()), 
 		'bluepil-bg.js');
 });
 gulp.task('imgOnly', function() {
+	var ctx = { BP_IMG: true};
   return processJS(['./src/js/core.js', './src/js/images.js'], 
-		{ BP_IMG: true}, 
+		Object.assign(ctx, buildContextFromArgs()), 
 		'bluepil-img.js');
 });
 gulp.task('css-min', function() {

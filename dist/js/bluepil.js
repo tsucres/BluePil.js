@@ -34,7 +34,6 @@ var PIL = {};
         this.loadImages(progressiveImages);
     };
 	
-
 	/**
      * Loads all the images (both background and non background images) found in the 
      * document that aren't marked with the class scroll-loaded.
@@ -54,7 +53,6 @@ var PIL = {};
             }
         }
     }
-	
 
 	/**
      * Loads all the images (both background and non background 
@@ -87,11 +85,11 @@ var PIL = {};
         }
         loadNextImage();
     }
-	
 
 	/// Add the event listener to the scroll-loaded images
     pil.initScrollLoadedImages = function() {
-        
+        var timer;
+
         function loadNewlyAppearedImages() {
 
             var scrollLoadedElements = document.getElementsByClassName("scroll-loaded");
@@ -114,12 +112,17 @@ var PIL = {};
                 }
             }
         }
+        function timelyLoadNewlyAppearedImages() {
+        	timer = timer || setTimeout(function() {
+		      	timer = null;
+		      	loadNewlyAppearedImages();
+		    }, 100);
+        }
         document.addEventListener("scroll", loadNewlyAppearedImages);
         document.addEventListener("resize", loadNewlyAppearedImages);
 
         loadNewlyAppearedImages();
     }
-
 
 	/**
      *  Callback called when a .progressive-bg-image or 

@@ -176,9 +176,10 @@ I don't know about you but I'm tired of all the existing libraries that . So I b
 1. Clone the repo
 2. Install gulp and its plugins: `npm install`
 3. run gulp: 
-	- `gulp` for the complete version
-	- `gulp bgOnly` for the background-image only version
-	- `gulp imgOnly` for the img only version
+	- `gulp` for the complete version (8kb)
+	- `gulp bgOnly` for the background-image only version (5kb)
+	- `gulp imgOnly` for the img only version (5kb)
+	- Add `--no-seq` and/or `--no-scroll` if you don't need the sequential loading mode and/or the scroll loading mode. This will reduce the size of the build even more.
 
 # TODO
 

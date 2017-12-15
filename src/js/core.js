@@ -42,7 +42,7 @@ var PIL = {};
         // @endif
     };
 	
-
+    // @ifndef NO_SCROLL_LOADED
 	/**
      * Loads all the images (both background and non background images) found in the 
      * document that aren't marked with the class scroll-loaded.
@@ -66,8 +66,9 @@ var PIL = {};
         }
         // @endif
     }
-	
+	// @endif
 
+	// @ifndef NO_SEQ
 	/**
      * Loads all the images (both background and non background 
      * images) found in the document, one by one, starting from 
@@ -103,7 +104,9 @@ var PIL = {};
         }
         loadNextImage();
     }
-	
+	// @endif
+
+    // @ifndef NO_SCROLL_LOADED
 
 	/// Add the event listener to the scroll-loaded images
     pil.initScrollLoadedImages = function() {
@@ -146,7 +149,7 @@ var PIL = {};
 
         loadNewlyAppearedImages();
     }
-
+    // @endif
 
 	/**
      *  Callback called when a .progressive-bg-image or 
