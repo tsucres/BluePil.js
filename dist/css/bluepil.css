@@ -29,3 +29,8 @@
 .full-bg-image {
 	width: 100%;
 }
+
+.hidden {
+	display: none;
+  	visibility: hidden;
+}

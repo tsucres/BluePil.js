@@ -387,18 +387,18 @@ function generateProgressiveBgImgMarkup(root_el) {
 
         var c = document.createDocumentFragment();
         var thumbnailImg = document.createElement("img");
-        thumbnailImg.classList.add("hidden");
-        thumbnailImg.classList.add("thumbnail");
+        _addClass(thumbnailImg, "hidden");
+        _addClass(thumbnailImg, "thumbnail");
         thumbnailImg.src = miniaturePath;
         c.appendChild(thumbnailImg);
         var fullBgImg = document.createElement("img");
-        fullBgImg.classList.add("hidden");
-        fullBgImg.classList.add("full-bg-image");
+        _addClass(fullBgImg, "hidden");
+        _addClass(fullBgImg, "full-bg-image");
         fullBgImg.setAttribute("data-src", fullImagePath);
         c.appendChild(fullBgImg);
         var canvas = document.createElement("canvas");
-        canvas.classList.add("full-absolute");
-        canvas.classList.add("progressive-img-load-canvas");
+        _addClass(canvas, "full-absolute");
+        _addClass(canvas, "progressive-img-load-canvas");
         c.appendChild(canvas);
         root_el.prepend(c);
 
@@ -503,7 +503,7 @@ function drawMinatureForImage(miniatureImg, canvas, placeholderFilDiv, width, he
  */
 function loadFullImage(fullImg, canvas, callback) {
     fullImg.onload = function() {
-        fullImg.classList.remove("hidden");
+        _removeClass(fullImg, "hidden");
         canvas.style.opacity = 0;
         typeof callback === 'function' && callback(true);
     }
@@ -542,7 +542,7 @@ function generateProgressiveImgMarkup(root_el) {
         _addClass(rootDiv, "aspectRatioPlaceholder")
 
         var aspectRatioPlaceholderFill = document.createElement("div");
-        aspectRatioPlaceholderFill.classList.add("aspectRatioPlaceholder-fill");
+        _addClass(aspectRatioPlaceholderFill, "aspectRatioPlaceholder-fill");
         rootDiv.appendChild(aspectRatioPlaceholderFill);
 
         var progressiveMedia = document.createElement("div");

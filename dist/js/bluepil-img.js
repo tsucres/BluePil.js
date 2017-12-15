@@ -337,7 +337,7 @@ function drawMinatureForImage(miniatureImg, canvas, placeholderFilDiv, width, he
  */
 function loadFullImage(fullImg, canvas, callback) {
     fullImg.onload = function() {
-        fullImg.classList.remove("hidden");
+        _removeClass(fullImg, "hidden");
         canvas.style.opacity = 0;
         typeof callback === 'function' && callback(true);
     }
@@ -376,7 +376,7 @@ function generateProgressiveImgMarkup(root_el) {
         _addClass(rootDiv, "aspectRatioPlaceholder")
 
         var aspectRatioPlaceholderFill = document.createElement("div");
-        aspectRatioPlaceholderFill.classList.add("aspectRatioPlaceholder-fill");
+        _addClass(aspectRatioPlaceholderFill, "aspectRatioPlaceholder-fill");
         rootDiv.appendChild(aspectRatioPlaceholderFill);
 
         var progressiveMedia = document.createElement("div");

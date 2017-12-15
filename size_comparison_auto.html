@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../dist/css/bluepil.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
+    <section class="container">
+        <div class="row">
+            <small><a href="../index.html"> << Back to the demo</a></small>
+            <h1>Miniature size comparison</h1>
+            <p>This compares the rendering of the blured canvas for different sizes of the miniaturized image. The aim is to determine what is the minimum size that produces a neat result.</p>
+        </div>
+    </section>
+    
+
+    <section class="container">
+        <div class="row">
+            <h3 class="col-xs-12">Img 1: </h3>
+            <small class="col-xs-12">source of the image: <a href="http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg" target="blank">http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg</a></small>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_10x6.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">10x6</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_15x9.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">15x9</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_20x12.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">20x12</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_25x15.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">25x15</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_30x17.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">30x17</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_35x20.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">35x20</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_40x23.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">40x23</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im3/im3.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im3/im3_45x26.jpg">
+                <img class="full-bg-image hidden" data-src="img/im3/im3.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">45x26</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <h3 class="col-xs-12">Img 2: jpg</h3>
+            <small class="col-xs-12">source of the image: <a href="https://i.redd.it/1ufjma0bet101.png" target="blank">https://i.redd.it/1ufjma0bet101.png</a></small>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_10x11.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">10x11</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_15x16.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">15x16</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_20x21.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">20x21</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_25x26.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">25x26</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_30x31.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">30x31</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_35x37.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">35x37</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_40x42.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">40x42</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im4/im4.png"></noscript>
+                <img class="hidden thumbnail" src="img/im4/im4_45x47.png">
+                <img class="full-bg-image hidden" data-src="img/im4/im4.png">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">45x47</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <h3 class="col-xs-12">Img 3</h3>
+            <small class="col-xs-12">source of the image: <a href="https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg" target="blank">https://static.pexels.com/photos/326055/pexels-photo-326055.jpeg</a></small>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_10x6.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">10x6</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_15x9.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">15x9</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_20x12.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">20x12</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_25x15.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">25x15</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_30x17.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">30x17</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_35x20.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">35x20</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_40x23.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">40x23</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im5/im5.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im5/im5_45x26.jpg">
+                <img class="full-bg-image hidden" data-src="img/im5/im5.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">45x26</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <h3 class="col-xs-12">Img 4</h3>
+            <small class="col-xs-12">source of the image: <a href="https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg" target="blank">https://static.pexels.com/photos/639086/pexels-photo-639086.jpeg</a></small>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_10x6.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">10x6</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_15x9.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">15x9</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_20x12.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">20x12</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_25x15.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">25x15</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_30x17.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">30x17</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_35x20.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">35x20</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_40x23.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">40x23</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im1/im1.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im1/im1_45x26.jpg">
+                <img class="full-bg-image hidden" data-src="img/im1/im1.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">45x26</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <h3 class="col-xs-12">Img 5</h3>
+            <small class="col-xs-12">source of the image: <a href="https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg" target="blank">https://www.goodfreephotos.com/albums/canada/alberta/banff-national-park/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg</a></small>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_10x7.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">10x7</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_15x11.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">15x11</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_20x14.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">20x14</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">25x17</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_30x21.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">30x21</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_35x24.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">35x24</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_40x27.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">40x27</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6 mini-sample-background progressive-bg-image v-center-content mouse-activated">
+                <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
+                <img class="hidden thumbnail" src="img/im2/im2_45x31.jpg">
+                <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+                <canvas class="full-absolute progressive-img-load-canvas"></canvas>
+                <div class="v-center relative">
+                    <h3 class="white">45x31</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script type="text/javascript" src="../dist/js/bluepil.min.js"></script>
+
+    <script type="text/javascript">
+        ;(function() {
+            
+            mouseActivatedEls = document.getElementsByClassName('mouse-activated');
+
+            for (var i = 0; i < mouseActivatedEls.length; i++) {
+                mouseActivatedEls[i].onmouseenter = function(evt) {
+                    var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+
+                    if (canvas) {
+                        canvas.style.opacity = 0;
+                    }
+                }
+                mouseActivatedEls[i].onmouseleave = function(evt) {
+                    var canvas = evt.target.querySelector(".progressive-img-load-canvas");
+                    if (canvas) {
+                        canvas.style.opacity = 1;
+                    }
+                }
+            }
+            
+            PIL.fullImageLoaded = function(object) {
+                if (object.root_el.classList.contains("mouse-activated")) {
+                    object.canvas.style.opacity = 1;
+                }
+            }
+            
+            PIL.go();
+        })();
+    </script>
+</body>
+</html>
+
