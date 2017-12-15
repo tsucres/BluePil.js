@@ -52,7 +52,7 @@ It's also a good idea to add a `<noscript>` tag:
 
 
 ```html
-<div class="progressive-bg-image" data-full-image-path="<full image path> data-mini-image-path="<mini image path>">
+<div class="progressive-bg-image" data-full-image-path="<full image path>" data-miniature-path="<mini image path>">
     <noscript><img class="full-absolute object-fit-cover" src="<full image path>"></noscript>
     
 </div>

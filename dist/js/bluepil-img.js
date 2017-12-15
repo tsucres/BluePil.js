@@ -266,7 +266,13 @@ function _hasClass(el, className) {
      */
     pil.initImages = function(root_els) {
         for (var i = 0; i < root_els.length; i++) {
-            this.initImage(root_els[i]);
+            try {
+                this.initImage(root_els[i]);
+            } catch(err) {
+                console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
+                console.log("BluePil error: the following element failed to init: ");
+                console.log(root_els[i]);
+            }
         }
     };
 
@@ -292,7 +298,13 @@ function _hasClass(el, className) {
      */
     pil.loadImages = function(root_els) {
         for (var i = 0; i < root_els.length; i++) {
-            this.loadImage(root_els[i]);
+            try {
+                this.loadImage(root_els[i]);
+            } catch(err) {
+                console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
+                console.log("BluePil error: the following element failed to load: ");
+                console.log(root_els[i]);
+            }
         }
     };
 })(PIL);
