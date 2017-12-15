@@ -6,7 +6,7 @@
 <img src="screenshots/bluepil_mini.gif" alt="screenshot">
 </p> 
 
-[![Build Status](https://travis-ci.org/tsucres/bluepil.svg?branch=master)](https://travis-ci.org/tsucres/bluepil)
+[![Build Status](https://travis-ci.org/tsucres/BluePil.js.svg?branch=master)](https://travis-ci.org/tsucres/BluePil.js)
 
 BluePil.js is a javascript library to progressively load images that works both for `img` tags **and** `background-images`.
 
