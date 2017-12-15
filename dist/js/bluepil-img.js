@@ -30,7 +30,6 @@ var PIL = {};
         this.loadImages(progressiveImages);
     };
 	
-
 	/**
      * Loads all the images (both background and non background images) found in the 
      * document that aren't marked with the class scroll-loaded.
@@ -44,11 +43,12 @@ var PIL = {};
             }
         }
     }
-	
 
 	/**
-     * Loads all the images (both background and non background images) found in the 
-     * document that aren't marked with the class scroll-loaded.
+     * Loads all the images (both background and non background 
+     * images) found in the document, one by one, starting from 
+     * the top of the DOM. (i.e. each image will start loading when 
+     * the previous one finished loading).
      */
     pil.loadImagesSequentially = function() {
         var allImages = document.querySelectorAll(".progressive-bg-image, .progressiveMedia");
@@ -69,11 +69,11 @@ var PIL = {};
         }
         loadNextImage();
     }
-	
 
 	/// Add the event listener to the scroll-loaded images
     pil.initScrollLoadedImages = function() {
-        
+        var timer;
+
         function loadNewlyAppearedImages() {
 
             var scrollLoadedElements = document.getElementsByClassName("scroll-loaded");
@@ -82,10 +82,10 @@ var PIL = {};
             var window_top_position = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
             var window_bottom_position = (window_top_position + window_height);
             for (var i = 0; i < scrollLoadedElements.length; i++) {
-                var element_height = scrollLoadedElements[i].offsetHeight;
-                var element_top_position = scrollLoadedElements[i].getBoundingClientRect().top + document.body.scrollTop;
-                var element_bottom_position = (element_top_position + element_height);
-                if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+                var el_rect = scrollLoadedElements[i].getBoundingClientRect();
+                var element_top_position = window_top_position + el_rect.top;
+                var element_bottom_position = element_top_position + el_rect.height;
+                if ((element_bottom_position > window_top_position) && (element_top_position < window_bottom_position)) {
                     if (_hasClass(scrollLoadedElements[i], "progressiveMedia")) {
                         PIL.loadImage(scrollLoadedElements[i])
                     }
@@ -93,12 +93,17 @@ var PIL = {};
                 }
             }
         }
+        function timelyLoadNewlyAppearedImages() {
+        	timer = timer || setTimeout(function() {
+		      	timer = null;
+		      	loadNewlyAppearedImages();
+		    }, 100);
+        }
         document.addEventListener("scroll", loadNewlyAppearedImages);
         document.addEventListener("resize", loadNewlyAppearedImages);
 
         loadNewlyAppearedImages();
     }
-
 
 	/**
      *  Callback called when a .progressive-bg-image or 
@@ -107,7 +112,7 @@ var PIL = {};
      */
     pil.fullImageLoaded = function(el) {};
 
-    pil.go = function() {
+    pil.go = function() { // TODO: sequence/scroll by param?
     	var _this = this;
     	function directlyLoadAllImages() {
     		_this.initAllImages();
@@ -116,8 +121,9 @@ var PIL = {};
     	if (document.readyState != "loading") {
     		directlyLoadAllImages();
     	} else {
-    		console.log("h");
-    		document.addEventListener("ready", directlyLoadAllImages);
+    		;(function() {
+    			directlyLoadAllImages();
+    		})();
     	}
     };
 

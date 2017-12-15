@@ -101,7 +101,7 @@ var PIL = {};
                 var el_rect = scrollLoadedElements[i].getBoundingClientRect();
                 var element_top_position = window_top_position + el_rect.top;
                 var element_bottom_position = element_top_position + el_rect.height;
-                if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+                if ((element_bottom_position > window_top_position) && (element_top_position < window_bottom_position)) {
                     if (_hasClass(scrollLoadedElements[i], "progressive-bg-image")) {
                         PIL.loadBgImage(scrollLoadedElements[i])
                     } 
