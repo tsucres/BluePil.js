@@ -150,6 +150,9 @@ PIL.fullImageLoaded = function(pilObject) {
 
 ```
 
+### full-loaded class
+
+In addition to the callback beeing called, the class `full-loaded` is added to the root_el when it's loaded. This makes it easy to define custom styles for loaded images!
 
 
 ## Trigger the download of the full image as the user scrolls
@@ -313,8 +316,8 @@ Pull requests are welcome too :)
 
 # TODO
 
-- Native support for different kind of transitions
-
+- Proper example for custom animations
+- Support for `srcset`. (Also make it work along with retina.js?)
 
 # LICENCE
 

@@ -85,7 +85,7 @@ function loadFullBgImage(root_el, fullBgImg, canvas, callback) {
     function fullBackgroundImageLoaded() {
         root_el.style.backgroundImage = 'url(' + fullBgImg.src + ')';
         setTimeout(function(){ // Without timeout the canvas fade out before the background was set...
-            canvas.style.opacity = 0;
+            _addClass(root_el, "full-loaded");
             typeof callback === 'function' && callback(true);
         }, 10);
     } 

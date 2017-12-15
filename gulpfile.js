@@ -7,6 +7,7 @@ var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var preprocess = require('gulp-preprocess');
 var uglify = require('gulp-uglify');
+var gzip = require('gulp-gzip');
 
 // fetch command line arguments
 const arg = (argList => {
@@ -39,6 +40,8 @@ function processJS(filenames, ctx, output_name) {
     .pipe(gulp.dest('./dist/js'))
     .pipe(rename(function (path) { path.extname = ".min.js" }))
     .pipe(uglify())
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(gzip())
     .pipe(gulp.dest('./dist/js'));
 }
 function buildContextFromArgs() {

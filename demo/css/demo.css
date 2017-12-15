@@ -56,3 +56,17 @@ body {
 .progressive-bg-image.bg-image-center-bottom {
        background-position: center bottom;
 }
+
+.progressive-image.custom-animation {
+  overflow: hidden;
+}
+
+.progressive-image.custom-animation .progressiveMedia-canvas {
+  transition: transform 1s ease, opacity 1s ease 0.3s;
+  transform: scale(1.2);
+}
+
+.progressive-image.custom-animation .full-loaded .progressiveMedia-canvas {
+  transform: scale(1);
+}
+

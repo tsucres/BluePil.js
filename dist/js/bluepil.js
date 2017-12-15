@@ -346,7 +346,7 @@ function loadFullBgImage(root_el, fullBgImg, canvas, callback) {
     function fullBackgroundImageLoaded() {
         root_el.style.backgroundImage = 'url(' + fullBgImg.src + ')';
         setTimeout(function(){ // Without timeout the canvas fade out before the background was set...
-            canvas.style.opacity = 0;
+            _addClass(root_el, "full-loaded");
             typeof callback === 'function' && callback(true);
         }, 10);
     } 
@@ -445,7 +445,7 @@ function generateProgressiveBgImgMarkup(root_el) {
         var fullBgImg = root_el.querySelector(".progressiveMedia-image"),
         canvas = root_el.querySelector(".progressiveMedia-canvas");
         var _this = this;
-        loadFullImage(fullBgImg, canvas, function(isSuccess) {
+        loadFullImage(root_el, fullBgImg, canvas, function(isSuccess) {
             _this.fullImageLoaded({"root_el": root_el, "canvas": canvas});
             typeof callback === 'function' && callback(isSuccess);
         });
@@ -495,16 +495,17 @@ function drawMinatureForImage(miniatureImg, canvas, placeholderFilDiv, width, he
 }
 
 /**
- * loadFullImage(fullImg, canvas[, callback])
+ * loadFullImage(root_el, fullImg, canvas[, callback])
+ * root_el: the .progressiveMedia element
  * fullImg: the .progressiveMedia-image element. It has to have the data-src attribute defined
  * canvas: the canvas showing the miniature
  * callback: called when the image is loaded with a boolean parameter indicating if the 
  *          image succesfully loaded or not.
  */
-function loadFullImage(fullImg, canvas, callback) {
+function loadFullImage(root_el, fullImg, canvas, callback) {
     fullImg.onload = function() {
         _removeClass(fullImg, "hidden");
-        canvas.style.opacity = 0;
+        _addClass(root_el, "full-loaded");
         typeof callback === 'function' && callback(true);
     }
     fullImg.onerror = function() {

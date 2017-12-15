@@ -9,6 +9,9 @@
 	-webkit-transition: opacity 1s;
 	transition: opacity 1s; 
 }
+.full-loaded .progressive-img-load-canvas, .full-loaded .progressiveMedia-canvas {
+	opacity: 0;
+}
 .progressive-bg-image {
 	background-position: center center;
 	background-size: cover;
