@@ -1,25 +1,25 @@
 <p align="center">
-![Features](screenshots/features.png)
+<img src="screenshots/features.png" alt="Features">
 </p>
 
 <p align="center">
-![Features](screenshots/bluepil_mini.gif)
+<img src="screenshots/bluepil_mini.gif" alt="screenshot">
 </p> 
 
 [![Build Status](https://travis-ci.org/tsucres/bluepil.svg?branch=master)](https://travis-ci.org/tsucres/bluepil)
 
 BluePil.js is a javascript library to progressively load images that works both for `img` tags **and** `background-images`.
 
-\>>>>>>>> DEMO <<<<<<<<
+\>>>>>>>> [DEMO](https://tsucres.github.io/BluePil.js/) <<<<<<<<
 
 (**Warning for mobile users**: the demo contains large images, think about it if you're on mobile data :) )
 
 
 # Usage
 
-There a 2 basic use cases: 
+There are 2 basic use cases: 
 1. background image: progressively load the `background-image` of an element
-2. `img` tag: progressively load the image in the `src` oof an `img` tag
+2. `img` tag: progressively load the image in the `src` of an `img` tag
 
 ## Install
 

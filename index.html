@@ -4,8 +4,8 @@
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-	<link rel="stylesheet" href="../dist/css/bluepil.min.css">
-	<link rel="stylesheet" href="css/demo.css">
+	<link rel="stylesheet" href="dist/css/bluepil.min.css">
+	<link rel="stylesheet" href="demo/css/demo.css">
 </head>
 <body>
 	<noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
@@ -15,12 +15,12 @@
 		<h3 class="row">Img</h3>
 		
 		<div class="row aspectRatioPlaceholder">
-			<noscript><img src="img/im1/im1.jpg" class="full-bg-image"></noscript>
+			<noscript><img src="demo/img/im1/im1.jpg" class="full-bg-image"></noscript>
 			<div class="aspectRatioPlaceholder-fill"></div>
 			  <div class="progressiveMedia full-absolute" data-width="5816" data-height="3272">
-			    <img class="progressiveMedia-thumbnail hidden" src="img/im1/im1_25x15.jpg" alt="" />
+			    <img class="progressiveMedia-thumbnail hidden" src="demo/img/im1/im1_25x15.jpg" alt="" />
 			    
-			    <img class="progressiveMedia-image full-absolute hidden" data-src="img/im1/im1.jpg" alt="" />
+			    <img class="progressiveMedia-image full-absolute hidden" data-src="demo/img/im1/im1.jpg" alt="" />
 			    <canvas class="progressiveMedia-canvas full-absolute"></canvas>
   			</div>
 		</div>
@@ -32,9 +32,9 @@
 
 		<div class="sample-background progressive-bg-image v-center-content">
 			<!-- Progressive load of bg img -->
-	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
-	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
-	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <noscript><img class="full-absolute" src="demo/img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="demo/img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="demo/img/im2/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 	        <!--================-->
 	        <div class="v-center white relative">
@@ -52,9 +52,9 @@
 		<div class="row">
 			<div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-left-top v-center-content mouse-activated">
 				<!-- Progressive load of bg img -->
-		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
-		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
-		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <noscript><img class="full-absolute" src="demo/img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="demo/img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="demo/img/im2/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 
 		        <div class="v-center relative">
@@ -63,9 +63,9 @@
 		    </div>
 		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-center-bottom v-center-content  mouse-activated">
 				<!-- Progressive load of bg img -->
-		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
-		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
-		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <noscript><img class="full-absolute" src="demo/img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="demo/img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="demo/img/im2/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		        <div class="v-center relative">
 		        	<h3 class="white">center bottom</h3>
@@ -73,9 +73,9 @@
 		    </div>
 		        <div class="col-sm-4 mini-sample-background progressive-bg-image bg-image-right-center v-center-content mouse-activated">
 				<!-- Progressive load of bg img -->
-		        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
-		        <img class="hidden thumbnail" src="img/im2/im2.jpg"> 
-		        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+		        <noscript><img class="full-absolute" src="demo/img/im2/im2.jpg"></noscript>
+		        <img class="hidden thumbnail" src="demo/img/im2/im2.jpg"> 
+		        <img class="full-bg-image hidden" data-src="demo/img/im2/im2.jpg">
 		        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		        <div class="v-center relative">
 		        	<h3 class="white">right center</h3>
@@ -85,7 +85,7 @@
 
 		<div class="row">
 			<h4>Miniature quality</h4>
-			<p>On <a href="size_comparison_auto.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
+			<p>On <a href="demo/size_comparison_auto.html">this page</a>, different sizes and qualities for the miniatures are tested to make an idea of the optimal size.</p>
 			<p>It seems that 25px for the biggest dimension (width or height) is the smallest size that produces a neat result.</p>
 		</div>
 
@@ -96,22 +96,22 @@
 		<p class="row">You can manage to start the download of the full size images only when they appear in the window</p>
 		<div class="sample-background progressive-bg-image scroll-loaded">
 			<!-- Progressive load of bg img -->
-	        <noscript><img class="full-absolute" src="img/im2/im2.jpg"></noscript>
-	        <img class="hidden thumbnail" src="img/im2/im2_25x17.jpg"> 
-	        <img class="full-bg-image hidden" data-src="img/im2/im2.jpg">
+	        <noscript><img class="full-absolute" src="demo/img/im2/im2.jpg"></noscript>
+	        <img class="hidden thumbnail" src="demo/img/im2/im2_25x17.jpg"> 
+	        <img class="full-bg-image hidden" data-src="demo/img/im2/im2.jpg">
 	        <canvas class="full-absolute progressive-img-load-canvas"></canvas>
 		</div>
 
-		<p class="row">A more elaborate example <a href="scroll_loading.html">here</a></p><!-- TODO-->
+		<p class="row">A more elaborate example <a href="demo/scroll_loading.html">here</a></p><!-- TODO-->
 
 	</section>
 
 	<section class="container">
 		<h3 class="row">Other tests</h3>
-		<p><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded from a different file or embedded in the html in a base64 format. The comparison is <a href="b64.html">here</a>.</p>
-		<p><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="dynamic_markup.html">here</a>.</p>
-		<p><strong>Sequential loading</strong>: a demonstration of how to load the images sequentially, i.e. start downloading the full-size images one at a time, starting with the first image in the DOM. It's available <a href="sequential_loading.html">here</a>.</p>
-		<p><strong>Custom builds</strong>: to reduce the footprint of the library and avoid unnecessary code, bluepil can be built to manage only background-images or html images (but not both). Those builds are respectively used <a href="test_bgimage_only.html">here</a> and <a href="test_image_only.html">here</a>.</p>
+		<p><strong>Base64</strong>: I wanted to see if there was a significant difference of loading time according to whether the miniature image is loaded from a different file or embedded in the html in a base64 format. The comparison is <a href="demo/b64.html">here</a>.</p>
+		<p><strong>Markup generation</strong>: I wanted to make sure that generating the markup dynamically wouldn't badly affect the animation. The test is <a href="demo/dynamic_markup.html">here</a>.</p>
+		<p><strong>Sequential loading</strong>: a demonstration of how to load the images sequentially, i.e. start downloading the full-size images one at a time, starting with the first image in the DOM. It's available <a href="demo/sequential_loading.html">here</a>.</p>
+		<p><strong>Custom builds</strong>: to reduce the footprint of the library and avoid unnecessary code, bluepil can be built to manage only background-images or html images (but not both). Those builds are respectively used <a href="demo/test_bgimage_only.html">here</a> and <a href="demo/test_image_only.html">here</a>.</p>
 	</section>
 	<footer style="min-height: 100px;" class="container">
 		<br><br><p class="row">
@@ -120,7 +120,7 @@
 	</footer>
 
         
-    <script type="text/javascript" src="../dist/js/bluepil.min.js"></script>
+    <script type="text/javascript" src="dist/js/bluepil.min.js"></script>
 
     <script type="text/javascript">
     	;(function() {

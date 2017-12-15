@@ -87,7 +87,7 @@ generated_html = """
     <noscript>There is no point in watching the demo of a javascript library with disabled javascript. What are you doing?</noscript>
     <section class="container">
         <div class="row">
-            <small><a href="index.html"> << Back to the demo</a></small>
+            <small><a href="../index.html"> << Back to the demo</a></small>
             <h1>Miniature size comparison</h1>
             <p>This compares the rendering of the blured canvas for different sizes of the miniaturized image. The aim is to determine what is the minimum size that produces a neat result.</p>
         </div>
