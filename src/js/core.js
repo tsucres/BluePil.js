@@ -110,8 +110,7 @@ var PIL = {};
 
 	/// Add the event listener to the scroll-loaded images
     pil.initScrollLoadedImages = function() {
-        var timer;
-
+        
         function loadNewlyAppearedImages() {
 
             var scrollLoadedElements = document.getElementsByClassName("scroll-loaded");
@@ -133,16 +132,10 @@ var PIL = {};
                     if (_hasClass(scrollLoadedElements[i], "progressiveMedia")) {
                         PIL.loadImage(scrollLoadedElements[i])
                     }
+                    // @endif
                     _removeClass(scrollLoadedElements[i], "scroll-loaded");
-                	// @endif
                 }
             }
-        }
-        function timelyLoadNewlyAppearedImages() {
-        	timer = timer || setTimeout(function() {
-		      	timer = null;
-		      	loadNewlyAppearedImages();
-		    }, 100);
         }
         document.addEventListener("scroll", loadNewlyAppearedImages);
         document.addEventListener("resize", loadNewlyAppearedImages);

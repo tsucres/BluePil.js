@@ -20,9 +20,11 @@
             try {
                 this.initBgImage(root_els[i]);
             } catch(err) {
+                // @ifdef DEBUG 
                 console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
                 console.log("BluePil error: the following element failed to init: ");
                 console.log(root_els[i]);
+                // @endif
             }
         }
     };
@@ -49,9 +51,11 @@
             try {
                 this.loadBgImage(root_els[i]);
             } catch(err) {
+                // @ifdef DEBUG 
                 console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
                 console.log("BluePil error: the following element failed to load: ");
                 console.log(root_els[i]);
+                // @endif
             }
         }
     };

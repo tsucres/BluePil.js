@@ -57,7 +57,7 @@ body {
        background-position: center bottom;
 }
 
-.progressive-image.custom-animation {
+.progressive-image.custom-animation, .progressive-image.custom-animation2 {
   overflow: hidden;
 }
 
@@ -65,8 +65,14 @@ body {
   transition: transform 1s ease, opacity 1s ease 0.3s;
   transform: scale(1.2);
 }
-
 .progressive-image.custom-animation .full-loaded .progressiveMedia-canvas {
   transform: scale(1);
 }
 
+.progressive-image.custom-animation2 .progressiveMedia {
+  transition: transform 1s ease 0.3s;
+  transform: scale(1.1);
+}
+.progressive-image.custom-animation2 .full-loaded.progressiveMedia {
+  transform: scale(1);
+}

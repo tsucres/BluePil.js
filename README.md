@@ -52,7 +52,8 @@ It's also a good idea to add a `<noscript>` tag:
 
 
 ```html
-<div class="progressive-bg-image" data-full-image-path="<full image path>" data-miniature-path="<mini image path>">
+<div class="progressive-bg-image" data-full-image-path="<full image path>" 
+            data-miniature-path="<mini image path>">
     <noscript><img class="full-absolute object-fit-cover" src="<full image path>"></noscript>
     
 </div>
@@ -76,7 +77,10 @@ To make an `img` tag load progressively, you have to set 4 attributes:
 Again, you may want to add a `<noscript>` tag.
 
 ```html
-<img class="progressive-image" data-full-image-path="<full image path>" data-miniature-path="<mini image path>" data-full-image-height="<height of full image>" data-full-image-width="<width of full image>">
+<img class="progressive-image" data-full-image-path="<full image path>" 
+            data-miniature-path="<mini image path>" 
+            data-full-image-height="<height of full image>" 
+            data-full-image-width="<width of full image>">
 <noscript><img src="<full image path>" class="full-bg-image"></noscript>
 ```
 
@@ -169,7 +173,9 @@ For a **background-image**:
 ```html
 // Example with markup generation
 
-<div class="progressive-bg-image" data-full-image-path="<full image path> data-mini-image-path="<mini image path>" data-scroll-loaded="true">
+<div class="progressive-bg-image" data-full-image-path="<full image path> 
+            data-mini-image-path="<mini image path>" 
+            data-scroll-loaded="true">
     <noscript><img class="full-absolute object-fit-cover" src="<full image path>"></noscript>
     
 </div>
@@ -192,7 +198,11 @@ For **img** tags:
 ```html
 // Example with markup generation
 
-<img class="progressive-image" data-scroll-loaded="true" data-full-image-path="<full image path>" data-miniature-path="<mini image path>" data-full-image-height="<height of full image>" data-full-image-width="<width of full image>">
+<img class="progressive-image" data-scroll-loaded="true" 
+            data-full-image-path="<full image path>" 
+            data-miniature-path="<mini image path>" 
+            data-full-image-height="<height of full image>" 
+            data-full-image-width="<width of full image>">
 <noscript><img src="<full image path>" class="full-bg-image"></noscript>
 
 // Generated markup
@@ -318,6 +328,8 @@ Pull requests are welcome too :)
 
 - Proper example for custom animations
 - Support for `srcset`. (Also make it work along with retina.js?)
+- Support for more kinds of `background-size: ...`
+- fix browser colpatibility issues
 
 # LICENCE
 

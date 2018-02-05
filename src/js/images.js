@@ -27,9 +27,11 @@
             try {
                 this.initImage(root_els[i]);
             } catch(err) {
+                // @ifdef DEBUG 
                 console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
                 console.log("BluePil error: the following element failed to init: ");
                 console.log(root_els[i]);
+                // @endif
             }
         }
     };
@@ -59,9 +61,11 @@
             try {
                 this.loadImage(root_els[i]);
             } catch(err) {
+                // @ifdef DEBUG 
                 console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
                 console.log("BluePil error: the following element failed to load: ");
                 console.log(root_els[i]);
+                // @endif
             }
         }
     };
@@ -143,8 +147,8 @@ function generateProgressiveImgMarkup(root_el) {
         var c = document.createDocumentFragment();
         
         var rootDiv = document.createElement("div");
-        rootDiv.className = root_el.className
-        _addClass(rootDiv, "aspectRatioPlaceholder")
+        rootDiv.className = root_el.className;
+        _addClass(rootDiv, "aspectRatioPlaceholder");
 
         var aspectRatioPlaceholderFill = document.createElement("div");
         _addClass(aspectRatioPlaceholderFill, "aspectRatioPlaceholder-fill");
@@ -179,10 +183,10 @@ function generateProgressiveImgMarkup(root_el) {
         _addClass(canvas, "full-absolute");
         progressiveMedia.appendChild(canvas);
 
-        c.appendChild(rootDiv)
+        c.appendChild(rootDiv);
 
         root_el.parentNode.insertBefore(c, root_el.nextSibling);
-        root_el.remove()
+        root_el.remove();
 
         return progressiveMedia;
     }

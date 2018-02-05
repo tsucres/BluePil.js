@@ -67,8 +67,7 @@ var PIL = {};
 
 	/// Add the event listener to the scroll-loaded images
     pil.initScrollLoadedImages = function() {
-        var timer;
-
+        
         function loadNewlyAppearedImages() {
 
             var scrollLoadedElements = document.getElementsByClassName("scroll-loaded");
@@ -84,14 +83,9 @@ var PIL = {};
                     if (_hasClass(scrollLoadedElements[i], "progressive-bg-image")) {
                         PIL.loadBgImage(scrollLoadedElements[i])
                     } 
+                    _removeClass(scrollLoadedElements[i], "scroll-loaded");
                 }
             }
-        }
-        function timelyLoadNewlyAppearedImages() {
-        	timer = timer || setTimeout(function() {
-		      	timer = null;
-		      	loadNewlyAppearedImages();
-		    }, 100);
         }
         document.addEventListener("scroll", loadNewlyAppearedImages);
         document.addEventListener("resize", loadNewlyAppearedImages);
@@ -256,9 +250,6 @@ function _hasClass(el, className) {
             try {
                 this.initBgImage(root_els[i]);
             } catch(err) {
-                console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
-                console.log("BluePil error: the following element failed to init: ");
-                console.log(root_els[i]);
             }
         }
     };
@@ -285,9 +276,6 @@ function _hasClass(el, className) {
             try {
                 this.loadBgImage(root_els[i]);
             } catch(err) {
-                console.error(err); // So that if one image in the document fails to load, bluepill still tries the other ones.
-                console.log("BluePil error: the following element failed to load: ");
-                console.log(root_els[i]);
             }
         }
     };
